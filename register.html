@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>remember</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        #box{background-color: rgb(255, 214, 228); width: 70%; min-width: 430px; margin:40px auto;
+            padding-top:20px; display: flex; flex-direction: column; justify-content: center;}
+        #name{text-align: center; font-size: 23px; font-weight: bold; margin-top: 10px;}
+        #inbox{min-width: 430px; margin:40px auto; margin-top: 10px;}
+        #in{ margin:0 auto; width: 370px; display: flex; flex-direction: column; justify-content: center;
+            align-items: flex-end;}
+        #in li{ float: right; font-size: 18px; margin:2px}
+        #in li input{ width: 300px; height: 25px; margin: 10px; }
+    </style>
+</head>
+<body>
+    <header>
+        <style>
+            header{ background-image: url('header.jpg');  background-size: 100% 200px ;background-repeat: no-repeat;
+            background-position: 0 -30px; padding: 15px; height: 100px; box-shadow: 0 -40px 70px 0 white inset;
+            border-bottom: rgba(255, 0, 200, 0.322) 5px solid;}
+            h1{ text-align: center; margin:0; padding-top: 10px;}
+            .login{ font-weight: bold; font-size: 15px; margin-left: 25px;}
+            #nav{ display: flex; justify-content: space-around;}
+            #nav li{ display: inline; font-weight: 700; }
+        </style>
+        <h1><a href="main.html">Remember</a></h1>
+        <div style="text-align: right; margin-right: 20px; border: none;">
+            <script>
+                document.write('<a href="login.html" class="login">로그인</a><a href="register.html" class="login">회원가입</a>')
+            </script>
+        </div>
+        <nav>
+            <ul id="nav">
+                <li><a href="#">New</a></li>
+                <li><a href="#">Best</a></li>
+                <li><a href="#">All</a></li>
+                <li><a href="#">Q&A</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="box">
+        <div id="name">Register</div>
+        <div id="inbox">
+            <ul id="in">
+                <li>이름  <input type="text" id="pw"></li>
+                <li>아이디  <input type="text" id="id"></li>
+                <li>비밀번호  <input type="password" id="pw"></li>
+                <li>비밀번호 확인  <input type="password" id="pw"></li>
+                <li>생년월일  <input type="password" id="pw"></li>
+                <li><button>회원가입</button></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
