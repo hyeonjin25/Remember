@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+.login {
+	font-weight: bold;
+	font-size: 15px;
+	margin-left: 25px;
+}
+
+ul {
+	display: flex;
+	justify-content: space-around;
+}
+
+li {
+	display: inline;
+	font-weight: 700;
+}
