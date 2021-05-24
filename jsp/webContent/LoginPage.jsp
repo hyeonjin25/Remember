@@ -5,60 +5,8 @@
 <meta charset="UTF-8">
 <title>login</title>
 <link rel="stylesheet" href="css/reset.css">
-<style>
-#box {
-	background-color: #ffe3de;
-	width: 70%;
-	min-width: 430px;
-	margin: 40px auto;
-	padding-top: 20px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
+<link rel="stylesheet" href="css/login.css">
 
-#name {
-	text-align: center;
-	font-size: 23px;
-	font-weight: bold;
-	margin-top: 10px;
-}
-
-#inbox {
-	min-width: 430px;
-	margin: 40px auto;
-	margin-top: 10px;
-}
-
-#in {
-	margin: 0 auto;
-	width: 400px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: flex-end;
-}
-
-#in li {
-	float: right;
-	font-size: 18px;
-	margin: 13px
-}
-
-#in li input {
-	width: 300px;
-	height: 25px;
-	margin: 10px;
-}
-.butt {
-	background-color: #bee5d3;
-	width:80px;
-	height:30px;
-	border-radius: 15px;
-	margin: 10px;
-	margin-left: 15px;
-}
-</style>
 </head>
 <body>
 	<jsp:include page="header.jsp" flush="false" />
