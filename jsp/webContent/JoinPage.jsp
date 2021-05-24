@@ -13,10 +13,9 @@
 </style>
 <script type="text/javascript">
 	function checking(e) {
-		var pw = document.getElementById("pw").value;
+		var pw = document.getElementById("userPW").value;
 		var pwcheck = document.getElementById("pwcheck").value;
 		if (pw != pwcheck) {
-			와
 			alert("비밀번호와 비밀번호 확인이 일치하지 않습니다.");
 			e.preventDefault();
 		}
@@ -35,9 +34,9 @@
 		<div id="inbox">
 			<form action="action/register_act.jsp" method="post">
 				<ul id="in">
-					<li>이름 <input type="text" name="name" maxlength="20"></li>
-					<li>아이디 <input type="text" name="id" maxlength="10"></li>
-					<li>비밀번호 <input type="password" name="pw" id="pw" maxlength="20"></li>
+					<li>이름 <input type="text" name="userName" maxlength="20"></li>
+					<li>아이디 <input type="text" name="userID" maxlength="10"></li>
+					<li>비밀번호 <input type="password" name="userPW" id="userPW" maxlength="20"></li>
 					<li>비밀번호 확인 <input type="password" name="pwcheck" id="pwcheck" maxlength="20"></li>
 					<li>생년월일 <input type="date" name="birth" id="birth" min="1900-01-01" max="2021-01-01"></li>
 					<li><button class="butt" type="submit" onclick="checking()">회원가입</button></li>
