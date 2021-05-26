@@ -25,17 +25,16 @@
 
 #in {
 	margin: 0 auto;
-	width: 400px;
+	width: 350px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: flex-end;
+	align-items: flex-start;
 }
 
 #in li {
-	float: right;
 	font-size: 18px;
-	margin: 13px
+	margin: 4px
 }
 
 #in li input {

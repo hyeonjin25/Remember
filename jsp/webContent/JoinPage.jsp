@@ -11,35 +11,20 @@
 	margin: 2px
 }
 </style>
-<script type="text/javascript">
-	function checking(e) {
-		var pw = document.getElementById("userPW").value;
-		var pwcheck = document.getElementById("pwcheck").value;
-		if (pw != pwcheck) {
-			alert("비밀번호와 비밀번호 확인이 일치하지 않습니다.");
-			e.preventDefault();
-		}
-	}
-	// 생년월일 입력 기본날짜 오늘로 바꾸기
-	document.getElementById("birth").value = new Date().toISOString()
-			.substring(0, 10);
-	document.getElementById("birth").max = new Date().toISOString().substring(
-			0, 10);
-</script>
 </head>
 <body style="overflow: scroll;">
 	<jsp:include page="header.jsp" flush="false" />
 	<div id="box">
 		<div id="name">Register</div>
 		<div id="inbox">
-			<form action="action/register_act.jsp" method="post">
+			<form action="action/joinAction.jsp" method="post">
 				<ul id="in">
-					<li>이름 <input type="text" name="userName" maxlength="20"></li>
-					<li>아이디 <input type="text" name="userID" maxlength="10"></li>
-					<li>비밀번호 <input type="password" name="userPW" id="userPW" maxlength="20"></li>
-					<li>비밀번호 확인 <input type="password" name="pwcheck" id="pwcheck" maxlength="20"></li>
-					<li>생년월일 <input type="date" name="birth" id="birth" min="1900-01-01" max="2021-01-01"></li>
-					<li><button class="butt" type="submit" onclick="checking()">회원가입</button></li>
+					<li>이름</li> <li><input type="text" name="userName" maxlength="20"></li>
+					<li>아이디</li> <li><input type="text" name="userID" maxlength="10"></li>
+					<li>비밀번호</li> <li><input type="password" name="userPW" id="userPW" maxlength="20"></li>
+					<li>비밀번호 확인</li> <li><input type="password" name="pwcheck" id="pwcheck" maxlength="20"></li>
+					<li>생년월일</li> <li><input type="date" name="userBirth" id="userBirth" min="1900-01-01" max="2021-01-01"></li>
+					<li><button class="butt" type="submit">회원가입</button></li>
 				</ul>
 			</form>
 		</div>
