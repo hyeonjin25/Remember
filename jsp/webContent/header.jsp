@@ -14,20 +14,20 @@
 		</h1>
 		<div style="text-align: right; margin-right: 20px; border: none;">
 		<%
-			String userId = (String)request.getAttribute("userId");
-			String adminId = (String)request.getAttribute("adminId");
+			String userID = (String)session.getAttribute("userID");
+			Integer userAdmin = (Integer)session.getAttribute("userAdmin"); 
 			
 			/* 사용자가 로그인 했을 경우 */
-			if(userId!=null) {
+			if(userID!=null && userAdmin==0) {
 				out.print("<a href='CartPage.jsp' class='login'>장바구니</a><a href='MyPage.jsp' class='login'>마이페이지</a>");
 			}
 			/* 관리자가 로그인 했을 경우 */
-			else if(adminId!=null) {
+			else if(userID!=null && userAdmin==1) {
 				out.print("<a href='AdminPage.jsp' class='login'>관리자페이지</a><a href='action/logout.act' class='login'>로그아웃</a>");
 			}
-			/* 로그인 하지 않았을 경구 */
+			/* 로그인 하지 않았을 경우 */
 			else{
-				out.print("<a href='LoginPage.jsp' class='login'>로그인</a><a href='RegisterPage.jsp' class='login'>회원가입</a>");
+				out.print("<a href='LoginPage.jsp' class='login'>로그인</a><a href='JoinPage.jsp' class='login'>회원가입</a>");
 			}
 		%>
 		</div>
