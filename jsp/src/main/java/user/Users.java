@@ -1,11 +1,13 @@
 package user;
 
 public class Users {
+	
 	private String userID;
 	private String userName;
 	private String userPW;
-	private String birth;
-	private Boolean admin;
+	private String userBirth;
+	private Integer userAdmin;
+	
 	public String getUserID() {
 		return userID;
 	}
@@ -21,20 +23,20 @@ public class Users {
 	public String getUserPW() {
 		return userPW;
 	}
-	public void setuserPW(String pw) {
+	public void setUserPW(String pw) {
 		this.userPW = pw;
 	}
-	public String getBirth() {
-		return birth;
+	public String getUserBirth() {
+		return userBirth;
 	}
-	public void setBirth(String birth) {
-		this.birth = birth;
+	public void setUserBirth(String birth) {
+		this.userBirth = birth;
 	}
-	public Boolean getAdmin() {
-		return admin;
+	public Integer getUserAdmin() {
+		return userAdmin;
 	}
-	public void setAdmin(Boolean admin) {
-		this.admin = admin;
+	public void setUserAdmin(Integer admin) {
+		this.userAdmin = admin;
 	}
 	
 }
