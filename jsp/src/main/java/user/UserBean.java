@@ -1,6 +1,6 @@
 package user;
 
-public class Users {
+public class UserBean {
 	
 	private String userID;
 	private String userName;
