@@ -18,7 +18,7 @@ public class userDAO {
 			String dbURL = "jdbc:mysql://localhost:3306/remember";
 			String dbID = "root";
 			String dbPW = "Rotsltm25!";
-			 Class.forName("com.mysql.jdbc.Driver"); // mysql driver를 찾을 수 있도록 함
+			Class.forName("com.mysql.jdbc.Driver"); // mysql driver를 찾을 수 있도록 함
 			conn = DriverManager.getConnection(dbURL, dbID, dbPW); // conn에 접속된 정보가 담김
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -28,11 +28,12 @@ public class userDAO {
 	//
 	// 로그인 기능 함수
 	//
-	public int login(String userID, String userPW) {
-		String sql = "SELECT userPW FROM USERS WHERE userID = ?";
+	public int login(String userID, String userPW, int userAdmin) {
+		String sql = "SELECT userPW FROM USERS WHERE userID = ? AND userAdmin = ?";
 		try {
 			pstmt = conn.prepareStatement(sql); // db에 정해진 문장을 삽입
-			pstmt.setString(1, userID); // 문장의 물음표에 id넣기
+			pstmt.setString(1, userID); // 문장의 물음표에 값 넣기
+			pstmt.setInt(2, userAdmin);
 			rs = pstmt.executeQuery(); // 결과를 담을 수 있는 객체에 실행결과 넣어주기
 
 			// 결과가 존재 할 경우 (회원 아이디를 넣었을 떄 비밀번호가 있는 경우)
@@ -53,11 +54,24 @@ public class userDAO {
 		}
 		return -2; // 데이터베이스 오류
 	}
-	
+
 	//
-	//회원가입 기능 함수
+	// 회원가입 기능 함수
 	//
-	public int join(String userID, String userName, String userPW, String birth, Boolean admin) {
-		return 0;
+	public int join(UserBean users) {
+		String sql = "INSERT INTO USERS VALUES (?,?,?,?,0)"; // userAdmin은 항상 false (관리자는 회원가입 불가능)
+		try {
+			pstmt = conn.prepareStatement(sql); // db에 정해진 문장을 삽입
+			// 문장의 물음표에 값 넣기
+			pstmt.setString(1, users.getUserID());
+			pstmt.setString(2, users.getUserName());
+			pstmt.setString(3, users.getUserPW());
+			pstmt.setString(4, users.getUserBirth());
+			return pstmt.executeUpdate(); // 해당 statement를 실행한 결과 넣어주기
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -1; // db오류 (INSERT문이 실행될 경우 반드시 0이상의 숫자가 반환됨)
+
 	}
 }
