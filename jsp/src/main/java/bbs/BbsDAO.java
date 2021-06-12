@@ -47,11 +47,12 @@ public class BbsDAO {
 	// 게시글 개수 가져오기
 	//
 	public int getListNum() {
-		String sql = "SELECT COUNT(*) FROM BBS WHERE bbsAvailable = 1"; // 삭제되지 않은 게시글의 개수
+		String sql = "SELECT COUNT(*) FROM BBS"; // 게시글의 개수
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
+				System.out.println("게시글수: "+rs.getInt(1));
 				return rs.getInt(1);
 			}
 		} catch (Exception e) {
@@ -69,6 +70,7 @@ public class BbsDAO {
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, getListNum() - (pageNum - 1) * 10);
+			System.out.println("1에 넣는 개수 : "+ (getListNum() - (pageNum - 1) * 10));
 			rs = pstmt.executeQuery();
 			while (rs.next()) { //db에서 받아온 데이터들 객체에 담기
 				BbsBean bbs = new BbsBean();
