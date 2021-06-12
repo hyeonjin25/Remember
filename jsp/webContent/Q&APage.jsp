@@ -30,7 +30,6 @@
 				<%
 					BbsDAO bbsDAO = new BbsDAO();
 					ArrayList<BbsBean>list = bbsDAO.getList(pageNum);
-					System.out.print(list.size());
 					for(int i=0; i<list.size(); i++){
 				%>
 				<tr style="height:45px;">
@@ -43,7 +42,7 @@
 				<% } %>
 			</table>
 			<div id="buttBox" style="width:80vw">
-				<button class="butt" onclick="location='WritePage.jsp'">글쓰기</button>
+				<button class="butt" onclick="location='BbsWritePage.jsp'">글쓰기</button>
 				<!-- 이전 페이지가 있을 경우 -->
 				<% if(pageNum != 1){ %>
 					<button class="butt" style="background-color: #ffe3de; float:left" onclick="location='Q&APage.jsp?pageNum=<%=pageNum - 1%>'">이전</button>
