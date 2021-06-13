@@ -66,7 +66,7 @@
 			<script type="text/javascript">
 				function deleteConfirm(){
 					if(confirm("정말로 삭제하시겠습니까?")){
-						location.href="action/deleteAction.jsp?bbsID=<%= bbs.getBbsID() %>";
+						location.href="action/bbsDeleteAction.jsp?bbsID=<%= bbs.getBbsID() %>";
 					}
 				}
 			</script>

@@ -25,7 +25,7 @@
 	<div id="box">
 		<div id="name">Write</div>
 		<div id="inbox">
-			<form action="action/writeAction.jsp" method="post">
+			<form action="action/bbsWriteAction.jsp" method="post">
 				<ul id="in" style="width:550px">
 					<li>제목</li>
 					<li><input type="text" name="bbsTitle" maxlength="50" style="width:500px"></li>

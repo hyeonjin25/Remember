@@ -52,7 +52,7 @@
 	<div id="box">
 		<div id="name">Modify</div>
 		<div id="inbox">
-			<form action="action/modifyAction.jsp?bbsID=<%= bbsID %>" method="post">
+			<form action="action/bbsModifyAction.jsp?bbsID=<%= bbsID %>" method="post">
 				<ul id="in" style="width:550px">
 					<li>제목</li>
 					<li><input type="text" name="bbsTitle" maxlength="50" value="<%= bbs.getBbsTitle() %>" style="width:500px"></li>
