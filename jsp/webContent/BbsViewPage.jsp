@@ -15,8 +15,7 @@
 		background-color: white;
 		border: solid 1px black;
 		font-size: 14px;
-		padding: 10px;
-		
+		padding: 10px;	
 	}
 </style>
 </head>
