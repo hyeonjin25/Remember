@@ -33,9 +33,9 @@
 		</div>
 		<nav>
 			<ul style="margin-bottom: 0">
-				<li><a href="ProductPage.jsp?sort=new">New</a></li>
-				<li><a href="ProductPage.jsp?sort=best">Best</a></li>
-				<li><a href="ProductPage.jsp?sort=all">All</a></li>
+				<li><a href="ProductPage.jsp?Kate=All">All</a></li>
+				<li><a href="ProductPage.jsp?Kate=Perfume">Perfume</a></li>
+				<li><a href="ProductPage.jsp?Kate=Difuser">Difuser</a></li>
 				<li><a href="Q&APage.jsp">Q&A</a></li>
 			</ul>
 		</nav>
