@@ -6,6 +6,13 @@ public class ProductsBean {
 	private Integer prodPrice;
 	private String prodThumbnail;
 	private String prodComment;
+	private String prodKategorie;
+	public String getProdKategorie() {
+		return prodKategorie;
+	}
+	public void setProdKategorie(String prodKategorie) {
+		this.prodKategorie = prodKategorie;
+	}
 	private Integer prodAvailable;
 	
 	public Integer getProdID() {
