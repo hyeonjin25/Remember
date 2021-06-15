@@ -53,7 +53,6 @@ public class ProductsDAO {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
-				System.out.println("상품수: "+rs.getInt(1));
 				return rs.getInt(1);
 			}
 		} catch (Exception e) {
@@ -65,12 +64,16 @@ public class ProductsDAO {
 	//
 	// 상품들 가져오기 기능
 	//
-	public ArrayList<ProductsBean> getList(int pageNum) {
-		String sql = "SELECT * FROM PRODUCTS WHERE prodID <= ? AND prodAvailable = 1 ORDER BY prodID DESC LIMIT 10";
+	public ArrayList<ProductsBean> getList(int pageNum, String kate) {
+		String sql = "";
+		if(kate.equals("All")) sql = "SELECT * FROM PRODUCTS WHERE prodID <= ? AND prodAvailable = 1 ORDER BY prodID DESC LIMIT 10";
+		else sql = "SELECT * FROM PRODUCTS WHERE prodID <= ? AND prodKategorie = ? AND prodAvailable = 1 ORDER BY prodID DESC LIMIT 10";
 		ArrayList<ProductsBean> list = new ArrayList<ProductsBean>();
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, getListNum() - (pageNum - 1) * 10);
+			//카테고리가 all일 경우에는 카테고리 조건 없음 
+			if(!kate.equals("All")) pstmt.setString(2, kate);
 			rs = pstmt.executeQuery();
 			while (rs.next()) { //db에서 받아온 데이터들 객체에 담기
 				ProductsBean prod = new ProductsBean();
@@ -79,7 +82,8 @@ public class ProductsDAO {
 				prod.setProdPrice(rs.getInt(3));
 				prod.setProdThumbnail(rs.getString(4));
 				prod.setProdComment(rs.getString(5));
-				prod.setProdAvailable(rs.getInt(6));
+				prod.setProdKategorie(rs.getString(6));
+				prod.setProdAvailable(rs.getInt(7));
 				list.add(prod);
 			}
 			
@@ -125,7 +129,8 @@ public class ProductsDAO {
 				prod.setProdPrice(rs.getInt(3));
 				prod.setProdThumbnail(rs.getString(4));
 				prod.setProdComment(rs.getString(5));
-				prod.setProdAvailable(rs.getInt(6));
+				prod.setProdKategorie(rs.getString(6));
+				prod.setProdAvailable(rs.getInt(7));
 				return prod;
 			}
 			

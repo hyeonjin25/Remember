@@ -18,7 +18,7 @@ public class BbsDAO {
 		try {
 			String dbURL = "jdbc:mysql://localhost:3306/remember";
 			String dbID = "root";
-			String dbPW = "Rotsltm25!";
+			String dbPW = "jindb";
 			Class.forName("com.mysql.jdbc.Driver"); // mysql driver를 찾을 수 있도록 함
 			conn = DriverManager.getConnection(dbURL, dbID, dbPW); // conn에 접속된 정보가 담김
 		} catch (Exception e) {
@@ -70,7 +70,6 @@ public class BbsDAO {
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, getListNum() - (pageNum - 1) * 10);
-			System.out.println("1에 넣는 개수 : "+ (getListNum() - (pageNum - 1) * 10));
 			rs = pstmt.executeQuery();
 			while (rs.next()) { //db에서 받아온 데이터들 객체에 담기
 				BbsBean bbs = new BbsBean();
@@ -93,7 +92,6 @@ public class BbsDAO {
 	//
 	public boolean isNextPage(int NextpageNum) {
 		String sql = "SELECT * FROM BBS WHERE bbsID <= ? AND bbsAvailable = 1 ORDER BY bbsID DESC LIMIT 10";
-		ArrayList<BbsBean> list = new ArrayList<BbsBean>();
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, getListNum() - (NextpageNum - 1) * 10);

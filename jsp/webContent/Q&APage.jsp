@@ -35,7 +35,7 @@
 				<tr style="height:45px;">
 					<td><%= list.get(i).getBbsID() %></td>
 					<td style="text-align: left; padding: 0 40px">
-					<a href="BbsViewPage.jsp?bbsID=<%= list.get(i).getBbsID() %>"><%= list.get(i).getBbsTitle() %>
+					<a href="BbsViewPage.jsp?bbsID=<%= list.get(i).getBbsID() %>"><%= list.get(i).getBbsTitle() %></a>
 					</td>
 					<td><%= list.get(i).getUserID() %></td>
 				</tr>

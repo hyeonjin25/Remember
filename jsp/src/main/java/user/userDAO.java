@@ -17,7 +17,7 @@ public class userDAO {
 		try {
 			String dbURL = "jdbc:mysql://localhost:3306/remember";
 			String dbID = "root";
-			String dbPW = "Rotsltm25!";
+			String dbPW = "jindb";
 			Class.forName("com.mysql.jdbc.Driver"); // mysql driver를 찾을 수 있도록 함
 			conn = DriverManager.getConnection(dbURL, dbID, dbPW); // conn에 접속된 정보가 담김
 		} catch (Exception e) {
