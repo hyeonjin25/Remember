@@ -52,7 +52,6 @@ public class BbsDAO {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
-				System.out.println("게시글수: "+rs.getInt(1));
 				return rs.getInt(1);
 			}
 		} catch (Exception e) {

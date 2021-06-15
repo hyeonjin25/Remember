@@ -40,6 +40,7 @@
 	border-radius: 15px;
 	margin: 10px;
 	margin-left: 15px;
+	cursor: pointer;
 }
 
 /* 인풋 디자인 (로그인, 회원가입)*/
@@ -59,7 +60,7 @@
 
 #in li input {
 	width: 300px;
-	height: 25px;
+	height: 27px;
 	margin: 10px;
 }
 
