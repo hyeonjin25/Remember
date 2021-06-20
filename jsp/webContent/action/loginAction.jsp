@@ -1,5 +1,4 @@
 <%@page import="user.UserDAO"%>
-<%@page import="org.apache.catalina.filters.SetCharacterEncodingFilter"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter"%>
 <%
@@ -51,10 +50,6 @@ request.setCharacterEncoding("utf-8");
 		//체크박스 선택 안된 경우 null값 대신 0 넣기
 		if (user.getUserAdmin() == null)
 			user.setUserAdmin(0);
-
-		System.out.println(user.getUserAdmin());
-		System.out.println(user.getUserID());
-		System.out.print(user.getUserPW());
 
 		//userDAO를 사용하여 로그인 시도 후 결과값 저장
 		int result = userDAO.login(user.getUserID(), user.getUserPW(), user.getUserAdmin());
