@@ -58,6 +58,9 @@
 					</td>
 				</tr>
 			</table>
+			<div id="buttBox">
+				<button class="butt" onclick="history.back()">back</button>
+			</div>
 			<%
 				if(userID != null && userID.equals(bbs.getUserID())){
 			%>
@@ -72,6 +75,7 @@
 			<div id="buttBox">
 				<button class="butt" onclick="location='BbsModifyPage.jsp?bbsID=<%= bbs.getBbsID() %>'">수정하기</button>
 				<button class="butt" onclick="deleteConfirm()">삭제하기</button>
+				<button class="butt" onclick="history.back()">back</button>
 			</div>
 			<% } %>
 		</div>
