@@ -79,16 +79,6 @@
 					</tr>
 					<% } %>
 			</table>
-			<div id="buttBox" style="width:80vw">
-				<!-- 이전 페이지가 있을 경우 -->
-				<% if(pageNum != 1){ %>
-					<button class="butt" style="background-color: #ffe3de; float:left" onclick="location='Q&APage.jsp?pageNum=<%=pageNum - 1%>'">이전</button>
-				<%} 
-				//다음 페이지가 있을 경우
-				if(prodDAO.isNextPage(pageNum+1)){ %>
-					<button class="butt" style="background-color: #ffe3de;" onclick="location='Q&APage.jsp?pageNum=<%=pageNum +1 %>'">다음</button>
-				<% } %>
-			</div>
 		</div>
 	</div>
 </body>
